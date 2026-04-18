@@ -19,6 +19,8 @@ ENV/
 build/
 dist/
 *.whl
+.eggs/
+*.spec
 
 # --- Runtime / logs --------------------------------------------------
 last_run.log
