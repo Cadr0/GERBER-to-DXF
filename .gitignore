@@ -1,0 +1,35 @@
+# --- Python ---------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtualenv ------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# --- Build artifacts -------------------------------------------------
+build/
+dist/
+*.whl
+
+# --- Runtime / logs --------------------------------------------------
+last_run.log
+*.log
+outputs/
+inputs/
+
+# --- OS / IDE --------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gerber2dxf"
+version = "0.3.0"
+description = "Gerber/Excellon -> DXF c веб-интерфейсом, предпросмотром слоёв и DXF-вьюером"
+requires-python = ">=3.10"
+dependencies = [
+  # 3.0.0a4+ содержит pygerber.gerber.* и shapely-бэкенд (pygerber.vm.shapely).
+  # Явно указано «a4», чтобы pip разрешал pre-release.
+  "pygerber[shapely]>=3.0.0a4,<4",
+  "ezdxf>=1.3.0",
+  "shapely>=2.0.0",
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "python-multipart>=0.0.9",
+  "matplotlib>=3.7",
+]
+
+[project.scripts]
+gerber2dxf = "gerber2dxf.cli:main"
+gerber2dxf-web = "gerber2dxf.web.launcher:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"gerber2dxf.web" = ["static/*"]
